@@ -9,7 +9,7 @@ jQuery(document).ready(function($){
     });
 
     // Open the Apply Now popup on click.
-    $('#apply-toggle1,#apply-toggle2').click(function() {
+    $('#apply-toggle1,#apply-toggle2,.job-box-button').click(function() {
         $('#apply-popup').show();
     });
 
