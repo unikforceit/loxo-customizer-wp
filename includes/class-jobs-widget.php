@@ -103,15 +103,15 @@ class JobsWidget extends \Elementor\Widget_Base {
         );
 
         // New control: Default Country.
-        $this->add_control(
-            'default_country',
-            array(
-                'label'   => __( 'Default Country', 'loxo-customizer-wp' ),
-                'type'    => \Elementor\Controls_Manager::SELECT,
-                'default' => '1',
-                'options' => $country_options,
-            )
-        );
+//        $this->add_control(
+//            'default_country',
+//            array(
+//                'label'   => __( 'Default Country', 'loxo-customizer-wp' ),
+//                'type'    => \Elementor\Controls_Manager::SELECT,
+//                'default' => '1',
+//                'options' => $country_options,
+//            )
+//        );
 
         $this->end_controls_section();
 
@@ -196,6 +196,87 @@ class JobsWidget extends \Elementor\Widget_Base {
             )
         );
 
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+            'style_section',
+            array(
+                'label' => __( 'Card', 'loxo-customizer-wp' ),
+                'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
+            )
+        );
+        $this->add_control(
+            'title_color',
+            [
+                'label' => esc_html__( 'Title Color', 'loxo-customizer-wp' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .loxo-customizer-job-card h4' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+        $this->add_control(
+            'title_colorh',
+            [
+                'label' => esc_html__( 'Title Hover Color', 'loxo-customizer-wp' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .loxo-customizer-job-card:hover h4' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'title_typography',
+                'label' => esc_html__( 'Title Typography', 'loxo-customizer-wp' ),
+                'selector' => '{{WRAPPER}} .loxo-customizer-job-card h4',
+            ]
+        );
+        $this->add_control(
+            'company_color',
+            [
+                'label' => esc_html__( 'Company Color', 'loxo-customizer-wp' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .loxo-customizer-company-name' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+        $this->add_control(
+            'company_colorh',
+            [
+                'label' => esc_html__( 'Company Hover Color', 'loxo-customizer-wp' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .loxo-customizer-job-card:hover .loxo-customizer-company-name' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'company_typography',
+                'label' => esc_html__( 'Company Typography', 'loxo-customizer-wp' ),
+                'selector' => '{{WRAPPER}} .loxo-customizer-company-name',
+            ]
+        );
+        $this->add_group_control(
+            \Elementor\Group_Control_Background::get_type(),
+            [
+                'name' => 'card_background',
+                'types' => [ 'classic', 'gradient', 'video' ],
+                'selector' => '{{WRAPPER}} .loxo-customizer-job-card',
+            ]
+        );
+        $this->add_group_control(
+            \Elementor\Group_Control_Background::get_type(),
+            [
+                'name' => 'card_backgroundh',
+                'types' => [ 'classic', 'gradient', 'video' ],
+                'selector' => '{{WRAPPER}} .loxo-customizer-job-card:hover',
+            ]
+        );
         $this->end_controls_section();
 
         // (The rest of your style controls would remain unchanged)

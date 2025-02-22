@@ -1,6 +1,9 @@
 // loxo-mod.js
 jQuery(document).ready(function($){
 
+    // Remove inline styles from description content
+    $('.single-job-description p, .single-job-description ul, .single-job-description ul li, .single-job-description img, .single-job-description a, .single-job-description span, .single-job-description strong').removeAttr('style');
+
     $('.loxo-customizer-job-card').tilt({
         scale: 1.05, // Example option to scale on hover
         maxTilt: 15, // Maximum tilt angle

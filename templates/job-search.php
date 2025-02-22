@@ -21,7 +21,6 @@ $results_per_page_options = array(8, 16, 24, 32, 48, 64, 128);
 ?>
 
 <section id="loxo-customizer-job-search">
-    <h3><?php _e( 'Job Search', 'loxo-customizer-wp' ); ?></h3>
     <?php include LOXO_CUSTOMIZER_PLUGIN_DIR . 'templates/top-search.php'; ?>
     <div class="loxo-customizer-jobs-wrapper">
         <?php if ( empty( $jobs ) ) : ?>
@@ -29,13 +28,17 @@ $results_per_page_options = array(8, 16, 24, 32, 48, 64, 128);
         <?php else : ?>
             <div class="loxo-customizer-jobs-grid">
                 <?php
+                $index = 0;
                 foreach ( $jobs as $job ) :
+                    $index++;
                     $company_logo = $job->company->logo_thumb_url;
                     ?>
                     <article class="loxo-customizer-job-card">
                         <a href="<?php echo esc_url( loxo_customizer_job_url_builder( $job->id ) ); ?>">
                             <h4><?php echo esc_html( $job->title ); ?>
+                                <?php if($index < 5){?>
                             <span class="badge new-badge"><?php _e( 'NEW', 'loxo-customizer-wp' ); ?></span>
+                            <?php } ?>
                             </h4>
                         <div class="job-meta">
                             <?php if ( $company_logo !== '/logos/thumb/missing.png' ) : ?>

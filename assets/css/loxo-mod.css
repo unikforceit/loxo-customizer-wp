@@ -1,8 +1,8 @@
-/* Modern Styling for Loxo Customizer WP */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
 /* Top Search Form */
 .loxo-customizer-top-search-form {
     width: 100%;
-    max-width: 800px;
+    max-width: 70%;
     margin: 0 auto 30px;
     text-align: center;
 }
@@ -18,39 +18,67 @@
     display: flex;
     justify-content: center;
     gap: 15px;
+    position: relative;
 }
 
 .keyword-row input[type="text"] {
-    width: 90%;
-    max-width: 600px;
-    padding: 12px 15px;
-    font-size: 18px;
-    border: 1px solid #ccc;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #2a334d;
     border-radius: 5px;
-}
-
-.filters-row select,
-.filters-row input[type="submit"] {
-    padding: 10px 15px;
+    margin-bottom: 20px;
     font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    color: #020202;
+    background-color: #fff;
 }
 
 .filters-row select {
+    padding: 10px;
+    border: 2px solid #2a334d;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #020202;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+    width: 220px;
     background: #fff;
 }
 
-.filters-row input[type="submit"] {
-    background-color: #0073aa;
+.filters-row select:hover {
+    background: #000;
     color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-.filters-row input[type="submit"]:hover {
-    background-color: #005177;
+.keyword-row button[type="submit"] {
+    color: #363636;
+    background-color: #F2B348;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    height: 40px;
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.keyword-row button[type="submit"]:hover {
+    background-color: #000;
+}
+
+.keyword-row button[type="submit"]:hover svg{
+    fill: #fff;
+    stroke: #fff;
+}
+.keyword-row button[type="submit"]:hover svg path{
+    fill: #fff;
+    stroke: #fff;
 }
 
 /* Job Grid */
@@ -58,21 +86,19 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Change to 4 per row */
     gap: 20px;
-    margin: 0 auto;
-    max-width: 1200px;
+    font-family: "Oswald", serif;
+}
+
+.loxo-customizer-job-card a{
+    display: block;
+    height: 100%;
 }
 
 .loxo-customizer-job-card {
     background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 10px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.loxo-customizer-job-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
 }
 
 .loxo-customizer-jobs-grid  .job-meta {
@@ -82,21 +108,28 @@
 .loxo-customizer-job-card h4 {
     font-size: 18px;
     color: #000;
-    background: #e0e0e0;
+    background: #8CADAC;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 10px 10px 0 0;
     position: relative;
+    transition: all 0.3s ease-in-out;
+    margin: 0;
 }
 
 .new-badge {
-    background-color: yellow;
-    color: black;
-    padding: 5px;
+    background-color: #F2B348;
     position: absolute;
-    top: 5px;
     right: 10px;
-    font-weight: bold;
-    border-radius: 5px;
+    top: -16px;
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    height: 32px;
+    width: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 5px 0px #0000006b;
 }
 
 .loxo-customizer-company-logo img {
@@ -106,23 +139,38 @@
     margin: 0 auto;
 }
 
+.loxo-customizer-job-card:hover{
+    background: #8CADAC;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.loxo-customizer-job-card:hover h4{
+    color: #fff;
+    background: #000;
+}
+
 /* Pagination and Results Per Page Wrapper */
 .loxo-customizer-pagination-wrapper {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     margin-top: 30px;
 }
 
 /* Results Per Page */
-.results-per-page {
+.results-per-page form {
     display: flex;
     align-items: center;
 }
 
+.results-per-page {
+    flex: 0 0 40%;
+}
+
 .results-per-page label {
     margin-right: 10px;
-    font-size: 16px;
+    font-size: 22px;
+    flex: 0 0 40%;
+    font-family: "Oswald", serif;
 }
 
 .results-per-page select {
@@ -130,7 +178,10 @@
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+    width: 70px;
 }
+
 
 /* Pagination */
 .loxo-customizer-pagination {
@@ -141,29 +192,29 @@
 .loxo-customizer-pagination a {
     display: inline-block;
     margin: 0 5px;
-    padding: 10px 15px;
-    background: #f1f1f1;
-    color: #333;
+    color: #000;
     text-decoration: none;
     border-radius: 4px;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease-in-out;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    line-height: 30px;
 }
 
 .loxo-customizer-pagination a.active,
 .loxo-customizer-pagination a:hover {
-    background: #0073aa;
+    background: #F2B348;
     color: #fff;
 }
 
 
 /* --- Single Job Page --- */
 .loxo-customizer-job-single {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
     background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    padding: 40px 30px;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 16px;
 }
 .loxo-customizer-job-single header a {
     display: inline-block;
@@ -172,34 +223,65 @@
     color: #0073aa;
 }
 .loxo-customizer-job-single h2 {
-    font-size: 28px;
-    color: #333;
-    margin-bottom: 15px;
+    color: #404040;
+    font-size: 40px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.single-job-meta-image {
+    padding: 20px 0;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .single-job-meta {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
-    margin: 0 0 15px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
+    flex: 0 0 60%;
 }
 .single-job-meta li {
+    list-style: disc;
+    margin-bottom: 10px;
     font-size: 16px;
-    color: #555;
+    align-items: center;
 }
-
+.loxo-customizer-job-single p b {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.single-job-description {
+    margin: 30px 0;
+}
 /* --- Apply Now Popup --- */
-.apply-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #0073aa;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
+.job-apply-button,
+.apply-popup-content [type=button], .apply-popup-content [type=submit], .apply-popup-content button{
+    padding: 20px 50px;
+    color: #363636;
+    background-color: #FFFFFF;
+    border-style: solid;
+    border-width: 4px 4px 4px 4px;
+    border-color: #FFB025;
+    font-size: 16px;
+    text-transform: uppercase;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: flex;
     margin-top: 20px;
+    font-family: "Oswald", serif;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.job-apply-button:hover, .job-apply-button:focus{
+    background-color: #FFB025;
+}
+.apply-popup-content [type=button], .apply-popup-content [type=submit], .apply-popup-content button {
+    padding: 10px 20px;
+}
+.apply-popup-content [type=button]:hover, .apply-popup-content [type=submit]:hover, .apply-popup-content button:hover {
+    background-color: #FFB025;
 }
 .apply-popup {
     display: none;
@@ -221,13 +303,24 @@
     max-width: 500px;
     position: relative;
 }
-.apply-close {
+.apply-popup-close {
     position: absolute;
     top: 10px;
-    right: 15px;
-    font-size: 28px;
-    font-weight: bold;
+    right: 10px;
+    font-size: 24px;
     cursor: pointer;
+    border: 1px solid #000;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+.apply-popup-close:hover {
+    background: #ffb025;
+    color: #fff;
 }
 
 .apply-popup {
@@ -297,6 +390,21 @@
     color: red;
     margin-bottom: 10px;
 }
+.apply-popup-content form label {
+    width: 100%;
+    display: block;
+    margin: 10px 0;
+}
+.apply-popup-content form label span {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: flex;
+}
+.apply-popup-content form label input {
+    border: 2px solid #000;
+    width: 100%;
+    padding: 5px;
+}
 /* Success message */
 .success-message {
     background-color: #4CAF50;
@@ -313,4 +421,102 @@
     padding: 15px;
     border-radius: 5px;
     margin-top: 20px;
+}
+
+.job-boxes {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+}
+
+.job-box {
+    width: 32%;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #e8f4f7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.job-box p {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.job-box .job-box-button {
+    display: inline-block;
+    margin-top: 20px;
+    width: 170px;
+    padding: 10px 20px;
+    border-style: solid;
+    border-width: 4px 4px 4px 4px;
+    background: #ffffff;
+    color: #363636;
+    border-color: #FFB025;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-family: "Oswald", serif;
+}
+.job-box .job-box-button:hover{
+    background-color: #FFB025;
+}
+#refer-box {
+    background-color: #d6d8dd;
+}
+#future-box {
+    background-color: #eee1da;
+}
+.the-fine-printe {
+    padding: 40px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .job-boxes {
+        flex-direction: column;
+    }
+    .job-box {
+        width: 100%;
+    }
+    .job-apply-button {
+        padding: 15px 20px;
+    }
+    .loxo-customizer-job-single h2 {
+        font-size: 28px;
+    }
+    .single-job-meta-image {
+        flex-direction: column;
+    }
+    .loxo-customizer-job-single {
+        padding: 20px;
+    }
+    .loxo-customizer-top-search-form {
+        max-width: 100%;
+    }
+    .search-row.filters-row {
+        flex-direction: column;
+    }
+    .filters-row select {
+        width: 100%;
+    }
+    .loxo-customizer-top-search-form form {
+        gap: 0px;
+    }
+    .loxo-customizer-pagination-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .loxo-customizer-jobs-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .results-per-page form {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .results-per-page select {
+        width: 100%;
+    }
 }

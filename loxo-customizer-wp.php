@@ -3,7 +3,7 @@
  * Plugin Name: Loxo Customizer WP
  * Plugin URI: https://example.com/loxo-customizer-wp
  * Description: A job search plugin with Elementor widget integration and single job page options.
- * Version: 1.0.0
+ * Version: 2.0.0
  * Author: UnikForce IT
  * Author URI: https://unikforce.com
  * Text Domain: loxo-customizer-wp
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-define( 'LOXO_CUSTOMIZER_VERSION', '1.0.0' );
+define( 'LOXO_CUSTOMIZER_VERSION', '2.0.0' );
 define( 'LOXO_CUSTOMIZER_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'LOXO_CUSTOMIZER_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
